@@ -30,16 +30,18 @@ if (isYarn) {
     exec(`npm create vite@latest ${projectName} -- --template react-ts`, {silent: true});
 }
 
-//修改tsconfig.json
 cd(projectName);
+
+//安装依赖
+console.log('安装默认依赖...');
+// exec('yarn');
+
+//修改tsconfig.json
 let tsconfigContent = fs.readFileSync('./tsconfig.json', 'utf-8');//删除注释,防止报错
 tsconfigContent = tsconfigContent.split('\n').filter(item => !item.trim().startsWith('/*')).join('\n');
-const tsconfig = JSON.parse(tsconfigContent);
-tsconfig.compilerOptions = {
-    compilerOptions: {
-        ...tsconfig.compilerOptions,
-        "moduleResolution": "node"
-    },
+let tsconfig = JSON.parse(tsconfigContent);
+tsconfig = {
+    ...tsconfig,
     "baseUrl": "./src",
     "paths": {
         "@/*": ["./src/*"]
@@ -47,3 +49,49 @@ tsconfig.compilerOptions = {
     "exclude": ["node_modules", "dist"]
 }
 fs.writeFileSync('./tsconfig.json', JSON.stringify(tsconfig, null, 2));
+
+//删除不需要的文件
+console.log('删除不需要的文件...');
+exec('rm -rf src/App.css');
+exec('rm -rf src/index.css');
+exec('rm -rf public/vite.svg');
+exec('rm -rf public');
+exec('rm -rf src/assets/react.svg');
+exec('rm -rf src/assets');
+
+//重写index.html
+console.log('重写index.html...');
+const index_html_content = `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>xie-react-app</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>`
+fs.writeFileSync('./index.html', index_html_content);
+
+//重写main.tsx
+console.log('重写main.tsx...');
+const main_tsx_content = `import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.tsx'
+
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)`
+fs.writeFileSync('./src/main.tsx', main_tsx_content);
+
+//重写App.tsx
+console.log('重写App.tsx...');
+const app_tsx_content = `export const App = () => {
+  return <div>hello xie-react-app</div>;
+}`
+fs.writeFileSync('./src/App.tsx', app_tsx_content);
+
