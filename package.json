@@ -7,7 +7,8 @@
     "create-xie-react": "./bin/create-xie-react.js"
   },
   "scripts": {
-    "v": "git add . & git commit -am build & npm version minor"
+    "v": "git add . & git commit -am build & npm version minor",
+    "p": "npm publish"
   },
   "author": "xiechanglei",
   "license": "MIT",
