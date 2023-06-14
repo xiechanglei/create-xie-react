@@ -6,6 +6,9 @@
   "bin": {
     "create-xie-react": "./bin/create-xie-react.js"
   },
+  "scripts": {
+    "pub": "git add . & git commit -am 1 & npm version minor & npm publish"
+  },
   "author": "xiechanglei",
   "license": "MIT",
   "dependencies": {
