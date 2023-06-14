@@ -33,6 +33,8 @@ if (isExist) {
 exec(`mkdir ${projectPath}`);
 //复制template目录下的所有文件到项目目录下
 cp('-Rf', `${binPath}/template/*`, projectPath);
+//以.开头的文件好像没有被辅助过去，应该手动复制一下
+cp('-Rf', `${binPath}/template/.[!.]*`, projectPath);
 cd(projectName)
 
 //重写index.html
