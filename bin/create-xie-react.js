@@ -52,12 +52,11 @@ fs.writeFileSync('./tsconfig.json', JSON.stringify(tsconfig, null, 2));
 
 //删除不需要的文件
 console.log('删除不需要的文件...');
-exec('rm -rf src/App.css');
-exec('rm -rf src/index.css');
-exec('rm -rf public/vite.svg');
-exec('rm -rf public');
-exec('rm -rf src/assets/react.svg');
-exec('rm -rf src/assets');
+fs.unlinkSync("src/App.css")
+fs.unlinkSync("src/index.css")
+fs.rmSync("public", {recursive: true})
+fs.rmSync("src/assets", {recursive: true})
+
 
 //重写index.html
 console.log('重写index.html...');
