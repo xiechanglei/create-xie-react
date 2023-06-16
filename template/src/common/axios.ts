@@ -10,7 +10,6 @@ export const axiosClient = axios.create({
  * 发送请求之前进行的处理
  */
 const beforeRequest = (config: any) => {
-    // config.headers["mental-token"] = getLocalToken()
     config.requestTime = Date.now()
     return config
 }
@@ -19,7 +18,7 @@ const beforeRequest = (config: any) => {
  * 发送请求之前出现的错误
  */
 const beforeRequestError = (error: unknown) => {
-    // publish("show-message", {type: "error", message: "网络错误"})
+    // TODO 处理发送数据之前产生的异常
     return Promise.reject(error)
 }
 
@@ -30,18 +29,14 @@ const afterResponse = (response: any) => {
     if (showLog) {
         printAjax(response)
     }
-    const {success, data, message} = response.data
-    if (success) {
-        return data
-    }
-    // publish("show-message", {type: "error", message})
-    return Promise.reject(message)
+    //TODO 数据统统一处理流程，简化业务代码中解构的过程
+    return response.data
 }
 /**
  * 响应之后出现的错误
  */
 const responseError = (error: any) => {
-    // publish("show-message", {type: "error", message: "服务器暂时无法访问"})
+    // TODO 处理发送数据之后产生的异常
     printAjax(error.response)
     return Promise.reject(error)
 }

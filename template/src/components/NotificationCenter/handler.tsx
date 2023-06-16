@@ -1,4 +1,7 @@
+import {randomId} from "@/common/string"
+
 export type NoticeMessage = {
+    id?: string,//消息id
     type: "success" | "error" | "warn" | "info", //消息类型  default is info
     content: string,//消息内容
     duration?: number,// 持续时间(ms) 默认3000
@@ -29,11 +32,12 @@ export const notify = (notice: string | NoticeMessage) => {
         ...defaultNoticeMessageOptions,
         content: notice
     } : {...defaultNoticeMessageOptions, ...notice}
+    finalNotice.id = randomId()
     receiverCollection.forEach(receiver => receiver(finalNotice))
 }
 
 
-setTimeout(() => notify({type: "success", content: "success message"}), 1000)
-setTimeout(() => notify({type: "info", content: "info message"}), 2000)
-setTimeout(() => notify({type: "error", content: "error message"}), 3000)
-setTimeout(() => notify({type: "warn", content: "warn message"}), 4000)
+setTimeout(() => notify({
+    type: "success",
+    content: "notification of app start success,this block will  be removed after 3  seconds"
+}), 2000)

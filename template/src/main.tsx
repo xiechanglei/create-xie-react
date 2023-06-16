@@ -7,7 +7,8 @@ import {initStyledConfig} from 'styled-px2vw-plugin'
 import {viewWidth} from "@/config"
 
 /**
- * 通过initStyledConfig去设置 styled-px2vw-plugin的配置
+ * 通过initStyledConfig去动态设置 styled-px2vw-plugin的配置
+ * 一般情况下，我们都是按照设计图的尺寸去实现代码
  */
 initStyledConfig({viewportWidth: viewWidth, ignoreAttrs: []})
 
