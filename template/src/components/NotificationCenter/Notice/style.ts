@@ -8,10 +8,11 @@ export const NoticeWrapper = styled.div`
   font-size: 13px;
   pointer-events: all;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 3px;
   opacity: 0;
   transition: all ${noticeShowTime}ms ease-in-out;
+  max-width: 300px;
 
   &.show {
     opacity: 1;
@@ -56,4 +57,5 @@ export const NoticeWrapper = styled.div`
 
 export const NoticeContent = styled.div`
   margin-left: 5px;
+  line-height: 20px;
 `

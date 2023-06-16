@@ -5,11 +5,12 @@ export type IconProps = {
     color?: string
 }
 export const SvgWrapper = styled.svg<IconProps>`
-  width: ${(props: IconProps) => props.size ? props.size : 24}px;
-  height: 24px;
+  width: ${(props: IconProps) => props.size ? props.size + "px" : "20px"};
+  flex-grow: 0;
+  flex-shrink: 0;
   color: ${(props: IconProps) => props.color ? props.color : "#777"};
-  
-  & path{
+
+  & path {
     fill: currentColor;
   }
 `
