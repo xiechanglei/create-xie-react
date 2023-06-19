@@ -1,6 +1,6 @@
 {
   "name": "create-xie-react",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "create react app with normal configs and some code of my like style",
   "main": "index.js",
   "bin": {

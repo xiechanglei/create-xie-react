@@ -16,3 +16,5 @@ export const infoColor = registerColor("info", "#0288d1")
 export const warnColor = registerColor("warn", "#ed6c02")
 
 export const errorColor = registerColor("error", "#d32f2f")
+
+export const disabledColor = registerColor("disabled", "#cacaca")
