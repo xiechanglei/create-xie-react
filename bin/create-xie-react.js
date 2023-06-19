@@ -38,18 +38,7 @@ cp('-Rf', `${binPath}/template/.[!.]*`, projectPath);
 cd(projectName)
 
 //重写index.html
-const index_html_content = `<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>${projectName}</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
-</html>`
+const index_html_content = fs.readFileSync('./index.html', 'utf-8').replace(/{{projectName}}/g, projectName)
 fs.writeFileSync(`./index.html`, index_html_content);
 
 //重写package.json
