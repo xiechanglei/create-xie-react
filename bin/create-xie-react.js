@@ -46,6 +46,12 @@ const packageJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'))
 packageJson.name = projectName
 fs.writeFileSync(`./package.json`, JSON.stringify(packageJson, null, 2))
 
+//添加gitignore
+fs.writeFileSync(`./.gitignore`, `node_modules
+dist
+yarn.lock
+.idea`);
+
 const isYarn = exec('yarn -v', {silent: true}).code === 0;
 colorPrint('创建完成', COLOR.GREEN);
 colorPrint('您可能需要使用以下命令：', COLOR.GREEN);
