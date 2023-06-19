@@ -1,8 +1,12 @@
 import styled from "styled-px2vw-plugin"
-import {errorColor, infoColor, successColor, warnColor} from "@/ui/config";
+import {ThemeColor} from "@/ui/color/ThemeColor"
 
 export const noticeShowTime = 200
-export const NoticeWrapper = styled.div`
+
+type NoticeWrapperProps = {
+    themeColor:ThemeColor
+}
+export const NoticeWrapper = styled.div<NoticeWrapperProps>`
   padding: 15px;
   margin: 10px;
   font-size: 13px;
@@ -13,45 +17,15 @@ export const NoticeWrapper = styled.div`
   opacity: 0;
   transition: all ${noticeShowTime}ms ease-in-out;
   max-width: 300px;
+  background: ${({themeColor}: NoticeWrapperProps) => themeColor.soft};
+  color: ${({themeColor}: NoticeWrapperProps) => themeColor.hell};
+
+  svg {
+    color: ${({themeColor}: NoticeWrapperProps) => themeColor}
+  }
 
   &.show {
     opacity: 1;
-  }
-
-  &.info {
-    background: ${infoColor.background};
-    color: ${infoColor.text};
-
-    svg {
-      color: ${infoColor.icon};
-    }
-  }
-
-  &.success {
-    background: ${successColor.background};
-    color: ${successColor.text};
-
-    svg {
-      color: ${successColor.icon};
-    }
-  }
-
-  &.warn {
-    background: ${warnColor.background};
-    color: ${warnColor.text};
-
-    svg {
-      color: ${warnColor.icon};
-    }
-  }
-
-  &.error {
-    background: ${errorColor.background};
-    color: ${errorColor.text};
-
-    svg {
-      color: ${errorColor.icon};
-    }
   }
 `
 

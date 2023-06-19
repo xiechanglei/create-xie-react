@@ -35,14 +35,3 @@ export const notify = (notice: string | NoticeMessage) => {
     finalNotice.id = randomId()
     receiverCollection.forEach(receiver => receiver(finalNotice))
 }
-
-
-setTimeout(() => notify({
-    type: "success",
-    content: "notification of app start success,this block will  be removed after 3  seconds"
-}), 2000)
-
-setTimeout(() => notify({
-    type: "success",
-    content: "notification"
-}), 4000)

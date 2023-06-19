@@ -1,4 +1,3 @@
-import {StrictMode} from 'react'
 import {createRoot} from 'react-dom/client'
 import "./global-style/base.css"
 import "./global-style/font.css"
@@ -24,8 +23,8 @@ if (windowWidth < 1366) {
  * 动态加载App.tsx 之后再渲染react,否则上面设置的px2vw插件不会生效
  */
 const initApp = async () => {
-    const App = (await import('./App')).default
-    createRoot(document.getElementById('root') as HTMLElement).render(<StrictMode><App/></StrictMode>)
+    const App = (await import('./App.tsx')).default
+    createRoot(document.getElementById('root') as HTMLElement).render(<App/>)
 }
 
 initApp()

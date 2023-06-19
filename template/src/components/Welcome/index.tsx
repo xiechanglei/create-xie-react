@@ -1,1 +1,0 @@
-export const Welcome = () => <div>thanks for use xie-react to create react + ts project</div>

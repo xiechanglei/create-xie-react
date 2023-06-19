@@ -11,6 +11,7 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "experimentalDecorators": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
@@ -19,12 +20,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
     "baseUrl": "src",
     "paths": {
-      "@/*": ["*"]
-    },
-
+      "@/*": [
+        "*"
+      ]
+    }
   },
   "include": [
     "src"
