@@ -9,6 +9,8 @@ const registerColor = (name: string, hexColor: string) => {
 }
 export const getThemeColor = (name: string) => colorMap.get(name)
 
+export const primaryColor = registerColor("primary", "#5156be")
+
 export const successColor = registerColor("success", "#2e7d32")
 
 export const infoColor = registerColor("info", "#0288d1")

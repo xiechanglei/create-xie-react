@@ -1,6 +1,7 @@
 import {useMount} from "@/common/react.hooks"
 import {notify} from "@/components/NotificationCenter/handler"
 import {useTestActions, useTestSelector} from "@/store/test.store"
+import {Button} from "@/ui/button"
 
 export const Welcome = () => {
     const {incremented, decremented} = useTestActions()
@@ -9,7 +10,9 @@ export const Welcome = () => {
     return <div>
         <div>welcome to use xie-react to create react + ts project</div>
         <div> test value:{user.value}</div>
-        <button onClick={() => incremented()}>click for increment</button>
-        <button onClick={() => decremented()}>click for decremented</button>
+
+        add<Button onClick={() => incremented()} text="Add"/>
+
+        sub<Button onClick={() => decremented()} text="Sub"/>
     </div>
 }

@@ -19,9 +19,11 @@ export const NoticeWrapper = styled.div<NoticeWrapperProps>`
   max-width: 300px;
   background: ${({themeColor}: NoticeWrapperProps) => themeColor.soft};
   color: ${({themeColor}: NoticeWrapperProps) => themeColor.hell};
+  font-weight: 500;
 
-  svg {
-    color: ${({themeColor}: NoticeWrapperProps) => themeColor}
+  & .icon {
+    color: ${({themeColor}: NoticeWrapperProps) => themeColor};
+    font-size: 1.5em;
   }
 
   &.show {

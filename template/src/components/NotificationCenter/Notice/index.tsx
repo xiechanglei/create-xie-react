@@ -18,10 +18,12 @@ export const Notice: FC<{ notice: NoticeMessage, onRemoved: () => void }> = ({no
         return () => clearTimeout(timer)
     })
     return <NoticeWrapper themeColor={getThemeColor(notice.type)} className={isShow ? 'show' : ''}>
-        {notice.type === 'error' && <ErrorIcon/>}
-        {notice.type === 'warn' && <WarnIcon/>}
-        {notice.type === 'info' && <InfoIcon/>}
-        {notice.type === 'success' && <SuccessIcon/>}
+        <div className="icon">
+            {notice.type === 'error' && <ErrorIcon/>}
+            {notice.type === 'warn' && <WarnIcon/>}
+            {notice.type === 'info' && <InfoIcon/>}
+            {notice.type === 'success' && <SuccessIcon/>}
+        </div>
         <NoticeContent>{notice.content}</NoticeContent>
     </NoticeWrapper>
 }

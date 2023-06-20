@@ -1,11 +1,16 @@
 import styled from "styled-px2vw-plugin"
+import {flex} from "@/ui/layout"
 /**
  * 将组件中的样式部分的数据抽离成style.ts
  */
 export const NotificationWrapper = styled.div`
+  ${flex("column")};
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  pointer-events: none;
 
   &.leftTop, &.leftBottom {
     left: 0;
