@@ -28,3 +28,13 @@ import {notify} from "@/components/NotificationCenter/notificationHandler"
 ...
 notify("start app success")
 ```
+
+##### 3.样式插槽
+
+```javascript
+import {flex} from "@/ui/layout"
+
+const Container = styled.div`
+  ${flex("column", "center", "center")}
+`
+```
