@@ -16,8 +16,7 @@
 ```javascript
 import {log} from "@/common/log"
 
-...
-log("TAG", "content1", "content2", ...)
+log("TAG", "content1", "content2")
 ```
 
 ##### 2.消息通知
@@ -25,7 +24,6 @@ log("TAG", "content1", "content2", ...)
 ```javascript
 import {notify} from "@/components/NotificationCenter/notificationHandler"
 
-...
 notify("start app success")
 ```
 
@@ -37,4 +35,21 @@ import {flex} from "@/ui/layout"
 const Container = styled.div`
   ${flex("column", "center", "center")}
 `
+```
+
+##### 4.默认的ui组件
+
+```javascript
+import {Button} from "@/ui/button"
+```
+
+##### 5.主题颜色
+
+```javascript
+import {primaryColor, successColor} from "@/ui/color"
+```
+
+##### 6.图标
+```javascript
+import {SuccessIcon} from "@/ui/icon"
 ```

@@ -1,11 +1,11 @@
 import styled from "styled-px2vw-plugin"
+import {FC, PropsWithChildren} from "react"
 
 export type IconProps = {
-    size?: number,
     color?: string
 }
 export const SvgWrapper = styled.svg<IconProps>`
-  height: ${(props: IconProps) => props.size ? props.size + "px" : "1em"};
+  height: 1em;
   flex-grow: 0;
   flex-shrink: 0;
   color: ${(props: IconProps) => props.color};
@@ -14,3 +14,8 @@ export const SvgWrapper = styled.svg<IconProps>`
     fill: currentColor;
   }
 `
+
+
+export const SvgIcon: FC<IconProps & PropsWithChildren> = (props) => {
+    return <SvgWrapper {...props} viewBox="0 0 24 24" className="xie-react-icon"></SvgWrapper>
+}

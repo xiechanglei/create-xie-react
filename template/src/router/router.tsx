@@ -1,10 +1,10 @@
 import {createHashRouter, RouteObject} from "react-router-dom"
-import {Welcome} from "@/pages/Welcome"
 import {ErrorPage} from "@/pages/ErrorPage"
+import {lazyRouter} from "./routerHandler"
 
 const routerOptions: RouteObject[] = [{
     path: "/",
-    element: <Welcome/>,
+    lazy: () => lazyRouter(import("@/pages/Welcome")),
     errorElement: <ErrorPage/>
 }]
 

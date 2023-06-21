@@ -1,10 +1,12 @@
-type StylePropertyValue = string | number
+type StylePropertyValue = string | number | undefined
 
 export class StyleBase {
     public styles: Map<string, StylePropertyValue> = new Map<string, StylePropertyValue>()
 
     style(style: string, value: StylePropertyValue) {
-        this.styles.set(style, value)
+        if (value !== undefined) {
+            this.styles.set(style, value)
+        }
         return this
     }
 

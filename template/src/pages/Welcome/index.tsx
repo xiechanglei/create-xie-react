@@ -10,9 +10,9 @@ export const Welcome = () => {
     return <div>
         <div>welcome to use xie-react to create react + ts project</div>
         <div> test value:{user.value}</div>
-
-        add<Button onClick={() => incremented()} text="Add"/>
-
-        sub<Button onClick={() => decremented()} text="Sub"/>
+        <Button onClick={() => incremented()} text="Add"/>
+        <Button onClick={() => decremented()} text="Sub"/>
     </div>
 }
+
+export default Welcome

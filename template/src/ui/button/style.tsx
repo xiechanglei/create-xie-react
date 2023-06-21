@@ -11,9 +11,9 @@ export type ButtonStyleProps = {
 const buildBorderRadius = (props: ButtonStyleProps) => {
     switch (props.shape) {
         case "circle":
-            return "3px"
+            return "0.3em"
         case "round":
-            return "55px"
+            return "3em"
         default:
             return "none"
     }
@@ -22,7 +22,7 @@ const buildBorderRadius = (props: ButtonStyleProps) => {
 const buildBoxShadow = (props: ButtonStyleProps) => {
     switch (props.provide) {
         case "mimicry":
-            return `0 1px 3px 0 ${props.color}66`
+            return `0 0.1em 0.3em 0 ${props.color}66`
         default:
             return "none"
     }
@@ -84,14 +84,13 @@ export const ButtonWrapper = styled.div<ButtonStyleProps>`
   cursor: pointer;
   overflow: hidden;
   position: relative;
-  font-weight: 500;
   transition: all 0.3s ease-in-out;
   padding: 0 0.5em;
   display: inline-flex;
   align-items: center;
 
   & .button-text {
-    margin-left: 0.5em;
+    padding: 0 0.5em;
   }
 
   &.small {
@@ -129,14 +128,14 @@ export const RipperElement = styled.div`
   border-radius: 50%;
   z-index: 99;
   background: #fff;
-  transform: translate(-50%, -50%) scale(0.2);
+  transform: translate(-50%, -50%) scale(0.5);
   opacity: 0;
 
 
   @keyframes ripper {
     0% {
       opacity: 0.3;
-      transform: translate(-50%, -50%) scale(0.2);
+      transform: translate(-50%, -50%) scale(0.5);
     }
     50% {
       opacity: 0.3;

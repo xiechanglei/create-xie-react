@@ -1,39 +1,36 @@
 import styled from "styled-px2vw-plugin"
-import {flex} from "@/ui/layout"
-/**
- * 将组件中的样式部分的数据抽离成style.ts
- */
-export const NotificationWrapper = styled.div`
-  ${flex("column")};
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 9999;
-  pointer-events: none;
+import {ThemeColor} from "@/ui/color/ThemeColor"
 
-  &.leftTop, &.leftBottom {
-    left: 0;
-    align-items: flex-start;
+export const noticeShowTime = 200
+
+type NoticeWrapperProps = {
+  themeColor:ThemeColor
+}
+export const NoticeWrapper = styled.div<NoticeWrapperProps>`
+  padding: 1em;
+  margin: 0.5em;
+  font-size: 13px;
+  pointer-events: all;
+  display: flex;
+  align-items: flex-start;
+  border-radius: 3px;
+  opacity: 0;
+  transition: all ${noticeShowTime}ms ease-in-out;
+  max-width: 30em;
+  background: ${({themeColor}: NoticeWrapperProps) => themeColor.soft};
+  color: ${({themeColor}: NoticeWrapperProps) => themeColor.hell};
+  font-weight: 500;
+
+  & .icon {
+    color: ${({themeColor}: NoticeWrapperProps) => themeColor};
+    font-size: 1.2em;
   }
 
-  &.rightTop, &.rightBottom {
-    right: 0;
-    align-items: flex-end;
+  &.show {
+    opacity: 1;
   }
+`
 
-  &.top, &.rightTop, &.leftTop {
-    top: 0;
-  }
-
-  &.bottom, &.rightBottom, &.leftBottom {
-    bottom: 0;
-    flex-direction: column-reverse;
-  }
-
-  &.top, &.bottom {
-    left: 50%;
-    align-items: center;
-    transform: translateX(-50%);
-  }
+export const NoticeContent = styled.div`
+  margin-left: 0.5em;
 `
