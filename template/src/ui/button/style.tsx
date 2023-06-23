@@ -31,7 +31,7 @@ const buildBoxShadow = (props: ButtonStyleProps) => {
 const buildBorder = (props: ButtonStyleProps) => {
     switch (props.provide) {
         case "soft":
-            return "none"
+            return `1px solid ${props.color?.soft}`
         default:
             return `1px solid ${props.color}`
     }

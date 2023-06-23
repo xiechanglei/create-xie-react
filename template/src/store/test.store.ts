@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import {creatActionsHook, createSelectorHook} from "@/store/handler"
+import {creatActionsHook, createNoParamActionsHook, createSelectorHook} from "@/store/handler"
 
 const initialState = {value: 0}
 
@@ -21,6 +21,9 @@ export const TestReducer = {[name]: reducer}
 
 //提供给组件用以快捷的获取dispatchAction
 export const useTestActions = creatActionsHook(actions)
+
+//提供给组件用以快捷的获取dispatchAction,并且这些action都是不需要传递参数的,用以优化代码，这些action可以直接设置为组件的事件而不需要包装一边
+export const useTestActionsWithNoParams = createNoParamActionsHook(actions)
 
 //描述多一炮action
 

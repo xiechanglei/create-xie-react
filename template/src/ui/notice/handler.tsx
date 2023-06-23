@@ -1,8 +1,10 @@
 import {randomId} from "@/common/string"
 
+export type NoticeType = "success" | "error" | "warn" | "info"
+
 export type NoticeMessage = {
     id?: string,//消息id
-    type: "success" | "error" | "warn" | "info", //消息类型  default is info
+    type: NoticeType, //消息类型  default is info
     content: string,//消息内容
     duration?: number,// 持续时间(ms) 默认3000
 }

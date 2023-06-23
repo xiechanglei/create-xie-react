@@ -1,7 +1,7 @@
 import styled from "styled-px2vw-plugin"
 import {RouterProvider} from "react-router-dom"
 import {Provider} from "react-redux"
-import {NotificationCenter} from "@/components/NotificationCenter"
+import {NotificationCenter} from "@/ui/notice"
 import {router} from "@/router/router"
 import {store} from "@/store"
 

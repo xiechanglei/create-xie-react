@@ -1,6 +1,6 @@
 import {ThemeColor} from "./ThemeColor"
 
-const colorMap = new Map<string, ThemeColor>()
+export const colorMap = new Map<string, ThemeColor>()
 
 const registerColor = (name: string, hexColor: string) => {
     const themeColor = ThemeColor.of(hexColor)

@@ -1,17 +1,25 @@
-import {useMount} from "@/common/react.hooks"
-import {notify} from "@/components/NotificationCenter/handler"
-import {useTestActions, useTestSelector} from "@/store/test.store"
-import {Button} from "@/ui/button"
+import {NotificationCenterPreview} from "@/ui/notice/develop.preview"
+import {ColorPreview} from "@/ui/color/develop.preview"
+import {ButtonPreview} from "@/ui/button/develop.preview"
+import {ReduxStorePreview} from "@/store/develop.preview"
+import {FontPreview} from "@/ui/font/develop.preview"
+import {IconsPreview} from "@/ui/icons/develop.preview"
 
 export const Welcome = () => {
-    const {incremented, decremented} = useTestActions()
-    const user = useTestSelector()
-    useMount(() => notify("welcome to use xie-react to create react + ts project"))
     return <div>
-        <div>welcome to use xie-react to create react + ts project</div>
-        <div> test value:{user.value}</div>
-        <Button onClick={() => incremented()} text="Add"/>
-        <Button onClick={() => decremented()} text="Sub"/>
+        <div>welcome to use xie-react to create react + ts project, author is xiechanglei</div>
+        <h1>0. Font</h1>
+        <FontPreview/>
+        <h1>1. Color plugin</h1>
+        <ColorPreview/>
+        <h1>2. Notice plugin</h1>
+        <NotificationCenterPreview/>
+        <h1>3. Button plugin</h1>
+        <ButtonPreview/>
+        <h1>4. Redux plugin</h1>
+        <ReduxStorePreview/>
+        <h1>5. Icon plugin</h1>
+        <IconsPreview/>
     </div>
 }
 

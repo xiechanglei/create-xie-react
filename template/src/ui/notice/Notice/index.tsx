@@ -1,8 +1,8 @@
 import {FC, useState} from "react"
-import {NoticeMessage} from "../handler.tsx"
+import {NoticeMessage} from "../handler"
 import {NoticeWrapper, NoticeContent, noticeShowTime} from "./style"
 import {ErrorIcon, WarnIcon, InfoIcon, SuccessIcon} from "@/ui/icons"
-import {useMount} from "@/common/react.hooks"
+import {useMount} from "@/common/react.hooks.ts"
 import {getThemeColor} from "@/ui/color"
 
 export const Notice: FC<{ notice: NoticeMessage, onRemoved: () => void }> = ({notice, onRemoved}) => {
