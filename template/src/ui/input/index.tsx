@@ -7,6 +7,7 @@ import {primaryColor} from "@/ui/color"
  * status: normal | fail | success
  * size：small | medium | large
  * icon: icon name
+ * reg
  */
 export const Input = styled.input`
   border: 1px solid #ccc;
