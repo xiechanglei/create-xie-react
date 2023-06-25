@@ -4,7 +4,7 @@ import {getThemeColor} from "@/ui/color"
 
 type ButtonProps = {
     onClick?: MouseEventHandler<HTMLElement>;
-    type?: "primary" | "success" | "info" | "warn" | "error" | "disabled";
+    type?: "primary" | "secondary" | "success" | "info" | "warn" | "error" | "disabled" | "dark";
     text?: string;
     icon?: ReactElement;
 } & Pick<ButtonStyleProps, "shape" | "provide" | "size" | "disabled">
@@ -15,7 +15,7 @@ export const Button: FC<ButtonProps> = (props) => {
     derivativeProps.shape = props.shape || "circle"
     derivativeProps.provide = props.provide || "mimicry"
     derivativeProps.size = props.size || "medium"
-    derivativeProps.disabled = props.disabled || false
+    derivativeProps.disabled = !!props.disabled
     derivativeProps.color = getThemeColor(props.type || "primary")
 
     const clickHandler: MouseEventHandler<HTMLElement> = (event) => {

@@ -74,9 +74,13 @@ export const ButtonPreview = () => {
         <option value="true">true(default)</option>
         <option value="false">false</option>
     </select>
-
         <ButtonGroup>
             <Button icon={showIcon ? <BoltIcon/> : undefined} text={showText ? "primary" : ""} type="primary"
+                    shape={shape}
+                    provide={provide}
+                    size={size}
+                    disabled={disabled}/>
+            <Button icon={showIcon ? <BoltIcon/> : undefined} text={showText ? "secondary" : ""} type="secondary"
                     shape={shape}
                     provide={provide}
                     size={size}
@@ -98,6 +102,10 @@ export const ButtonPreview = () => {
                     size={size}
                     disabled={disabled}/>
             <Button icon={showIcon ? <CloseIcon/> : undefined} text={showText ? "disabled" : ""} type="disabled"
+                    shape={shape}
+                    provide={provide} size={size}
+                    disabled={disabled}/>
+            <Button icon={showIcon ? <CloseIcon/> : undefined} text={showText ? "dark" : ""} type="dark"
                     shape={shape}
                     provide={provide} size={size}
                     disabled={disabled}/>
