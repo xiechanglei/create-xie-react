@@ -5,7 +5,7 @@ type FullBackImageProps = {
     image: string;
     zIndex: number;
 }
-export const FullBackImage = styled.div<FullBackImageProps>`
+export const FullImageBack = styled.div<FullBackImageProps>`
   ${absolute().left().top()};
   width: 100%;
   height: 100%;

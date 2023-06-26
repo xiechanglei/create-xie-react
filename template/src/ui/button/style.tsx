@@ -116,8 +116,8 @@ export const ButtonWrapper = styled.div<ButtonStyleProps>`
   border: ${buildBorder};
   background: ${buildBackground};
   color: ${buildTextColor};
-  ${buildOpacity}
-  ${buildHoverColor}
+  ${buildOpacity};
+  ${buildHoverColor};
 `
 
 export const RipperElement = styled.div`
