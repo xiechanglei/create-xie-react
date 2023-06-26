@@ -3,3 +3,11 @@ body, input {
     line-height: 2;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+
+/*https://divriots.com/font/Good%20Brush.woff
+@font-face {
+    font-family: Heading;
+    src: local(Good Brush),url("/font/Good Brush.woff")format("woff");
+    font-display: block
+}
+*/
